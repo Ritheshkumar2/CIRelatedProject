@@ -14,7 +14,7 @@ public class MainClass extends DriverInitialization{
 		setDriver();
 	}
 	
-	@Test(priority=-1)
+	@Test(priority=1)
 	public void login() {
 		getDriver().get("https://testautomationpractice.blogspot.com/");
 		getDriver().manage().window().maximize();
