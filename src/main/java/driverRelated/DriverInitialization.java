@@ -9,13 +9,13 @@ public class DriverInitialization {
 	private static ThreadLocal<WebDriver> driver=new ThreadLocal<>();
 	
 	
-	public void setDriver() {
+	public static void setDriver() {
 		 ChromeOptions options = new ChromeOptions();
 		 options.addArguments("--headless=new");
 		driver.set(new ChromeDriver(options));
 	} 
 	
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver.get();
 	}
 	
