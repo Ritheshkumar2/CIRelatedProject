@@ -22,6 +22,6 @@ pipeline {
             steps {
                 bat 'mvn test'
             }
-        }
+            
     }
 }

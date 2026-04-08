@@ -13,12 +13,17 @@
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-edge-driver -->
 
 
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.4.0</version> <!-- Instead of 7.11.0 -->
-    <scope>test</scope>
-</dependency>
+
+
+    <!-- TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.9.0</version>
+        <scope>test</scope>
+    </dependency>
+
+
 
 <dependency>
     <groupId>com.aventstack</groupId>
@@ -46,12 +51,17 @@
 </dependency>
 </dependencies>
 <build>
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.2.2</version>
-    </plugin>
-  </plugins>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+    </plugins>
 </build>
 </project>
