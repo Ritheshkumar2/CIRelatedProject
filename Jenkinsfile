@@ -6,22 +6,18 @@ pipeline {
     }
 
     stages {
-    
-    stage('Checkout') {
-    steps {
-        checkout scm
-    }
-
-        stage('Build') {
-            steps {
-                bat 'mvn clean compile'
-            }
-        }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat 'mvn clean test'
             }
-            
+        }
+    }
+
+    post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+            archiveArtifacts artifacts: 'screenshots/*.png', fingerprint: true
+        }
     }
 }
