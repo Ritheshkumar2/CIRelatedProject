@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 import base.LoginPage;
 import driverRelated.DriverInitialization;
-import util.Listenerclass;
 
 @Listeners(Listenerclass.class)
 public class MainClass extends DriverInitialization{
